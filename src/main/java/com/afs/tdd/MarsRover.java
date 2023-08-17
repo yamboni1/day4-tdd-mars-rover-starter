@@ -25,7 +25,12 @@ public class MarsRover {
                     location.setX(location.getX()- 1);
                 }
             }
+        }if(givenCommand ==Command.TURN_LEFT){
+            if(location.getDirection() ==  Direction.NORTH){
+                location.setDirection(Direction.WEST);
+            }
         }
+
 
 
 

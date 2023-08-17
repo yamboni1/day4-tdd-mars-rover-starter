@@ -25,9 +25,10 @@ public class MarsRover {
                     location.setX(location.getX()- 1);
                 }
             }
-
-
         }
+
+
+
     }
 
     public Location getCurrentLocation() {

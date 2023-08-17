@@ -13,8 +13,16 @@ public class Location {
         return direction;
     }
 
-    private final int x;
-    private final int y;
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    private int x;
+    private int y;
     private final Direction direction;
 
     public Location(int x, int y, Direction direction) {

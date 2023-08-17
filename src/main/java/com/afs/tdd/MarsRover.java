@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.List;
+
 public class MarsRover {
 
     private Location location;
@@ -7,6 +9,8 @@ public class MarsRover {
     public MarsRover(Location location) {
         this.location = location;
     }
+
+
 
     public void executeCommand(Command givenCommand) {
         if (givenCommand == Command.MOVE) {
@@ -49,10 +53,11 @@ public class MarsRover {
 
         }
 
-
-
-
     }
+    public void executeBatchCommands(List<Command> commandList){
+        commandList.forEach(this::executeCommand);
+    }
+
 
     public Location getCurrentLocation() {
         return location;

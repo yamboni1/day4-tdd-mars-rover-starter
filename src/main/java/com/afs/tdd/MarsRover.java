@@ -16,6 +16,10 @@ public class MarsRover {
                 if (location.getDirection() == Direction.SOUTH) {
                     location.setY(location.getY() - 1);
                 }
+            } else if (givenCommand == Command.MOVE) {
+                if (location.getDirection() == Direction.EAST) {
+                    location.setX(location.getX() + 1);
+                }
             }
 
 

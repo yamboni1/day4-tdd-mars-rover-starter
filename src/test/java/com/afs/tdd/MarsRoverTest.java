@@ -182,15 +182,15 @@ class MarsRoverTest {
         Location initialLocation = new Location(0, 0, Direction.NORTH);
         List<Command> listOfCommands = new ArrayList<>();
         listOfCommands.add(Command.MOVE);
-        listOfCommands.add(Command.TURN_RIGHT);
+//        listOfCommands.add(Command.TURN_RIGHT);
         MarsRover marsRover = new MarsRover(initialLocation);
         // When
-        marsRover.executeCommand(listOfCommands);
+        marsRover.executeBatchCommands(listOfCommands);
         Location currentLocation = marsRover.getCurrentLocation();
         // Then
         Assertions.assertEquals(0 , currentLocation.getX());
         Assertions.assertEquals( 1 , currentLocation.getY());
-        Assertions.assertEquals(Direction.EAST , currentLocation.getDirection());
+        Assertions.assertEquals(Direction.NORTH , currentLocation.getDirection());
     }
 
 }

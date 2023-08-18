@@ -7,7 +7,6 @@ public class MarsRover {
     private Location location;
 
 
-
     public MarsRover(Location location) {
         this.location = location;
     }
@@ -22,49 +21,51 @@ public class MarsRover {
         }
     }
 
-    private void executeCommandMove(){
+    private void executeCommandMove() {
         int moveUp = location.getY() + 1;
-        if(location.getDirection() == Direction.NORTH){
+        if (location.getDirection() == Direction.NORTH) {
             location.setY(moveUp);
-        }else if(location.getDirection()  == Direction.EAST){
+        } else if (location.getDirection() == Direction.EAST) {
             location.setX(moveUp);
-        }else {
+        } else {
             int moveDown = location.getY() - 1;
-            if(location.getDirection()  == Direction.SOUTH){
+            if (location.getDirection() == Direction.SOUTH) {
                 location.setY(moveDown);
-            }else if(location.getDirection()  == Direction.WEST){
+            } else if (location.getDirection() == Direction.WEST) {
                 location.setX(moveDown);
 
             }
         }
 
     }
-    private void executeCommandTurnLeft(){
-        if(location.getDirection() ==  Direction.NORTH){
-           location.setDirection(Direction.WEST);
-        }else if(location.getDirection() ==  Direction.SOUTH){
-            location.setDirection(Direction.EAST);
-        }else if(location.getDirection() ==  Direction.EAST){
-            location.setDirection(Direction.NORTH);
-        }else if(location.getDirection() ==  Direction.WEST){
-            location.setDirection(Direction.SOUTH);
-        }
-    }
-    private void executeCommandTurnRight(){
 
-        if(location.getDirection() == Direction.NORTH){
-            location.setDirection(Direction.EAST);
-        }else if(location.getDirection() == Direction.SOUTH){
+    private void executeCommandTurnLeft() {
+        if (location.getDirection() == Direction.NORTH) {
             location.setDirection(Direction.WEST);
-        }else if(location.getDirection() == Direction.EAST){
+        } else if (location.getDirection() == Direction.SOUTH) {
+            location.setDirection(Direction.EAST);
+        } else if (location.getDirection() == Direction.EAST) {
+            location.setDirection(Direction.NORTH);
+        } else if (location.getDirection() == Direction.WEST) {
             location.setDirection(Direction.SOUTH);
-        }else if(location.getDirection() == Direction.WEST){
+        }
+    }
+
+    private void executeCommandTurnRight() {
+
+        if (location.getDirection() == Direction.NORTH) {
+            location.setDirection(Direction.EAST);
+        } else if (location.getDirection() == Direction.SOUTH) {
+            location.setDirection(Direction.WEST);
+        } else if (location.getDirection() == Direction.EAST) {
+            location.setDirection(Direction.SOUTH);
+        } else if (location.getDirection() == Direction.WEST) {
             location.setDirection(Direction.NORTH);
         }
     }
 
 
-    public void executeBatchCommands(List<Command> commandList){
+    public void executeBatchCommands(List<Command> commandList) {
         commandList.forEach(this::executeCommand);
     }
 

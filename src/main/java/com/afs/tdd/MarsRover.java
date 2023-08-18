@@ -23,17 +23,16 @@ public class MarsRover {
 
     private void executeCommandMove() {
         int moveUp = location.getY() + 1;
+        int moveDown = location.getY() - 1;
         if (location.getDirection() == Direction.NORTH) {
             location.setY(moveUp);
         } else if (location.getDirection() == Direction.EAST) {
             location.setX(moveUp);
         } else {
-            int moveDown = location.getY() - 1;
             if (location.getDirection() == Direction.SOUTH) {
                 location.setY(moveDown);
             } else if (location.getDirection() == Direction.WEST) {
                 location.setX(moveDown);
-
             }
         }
 

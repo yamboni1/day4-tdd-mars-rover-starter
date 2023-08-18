@@ -6,11 +6,12 @@ public class MarsRover {
 
     private Location location;
 
-
     public MarsRover(Location location) {
         this.location = location;
     }
 
+    //TODO: the commands and function can be separated in different classes or use a design pattern, suggestion can use command pattern.
+    //TODO: some if/else statements can be converted into switch/stream so it can be shorten.
     public void executeCommand(Command givenCommand) {
         if (givenCommand == Command.MOVE) {
             executeCommandMove();
@@ -20,6 +21,7 @@ public class MarsRover {
             executeCommandTurnLeft();
         }
     }
+
 
     private void executeCommandMove() {
         int moveUp = location.getY() + 1;

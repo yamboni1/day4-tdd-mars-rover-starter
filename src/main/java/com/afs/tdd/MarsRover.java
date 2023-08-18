@@ -22,21 +22,18 @@ public class MarsRover {
     }
 
     private void executeCommandMove() {
-        int moveUp = location.getY() + 1;
-        int moveDown = location.getY() - 1;
+
         if (location.getDirection() == Direction.NORTH) {
-            location.setY(moveUp);
+            location.setY(location.getY() + 1);
         } else if (location.getDirection() == Direction.EAST) {
-            location.setX(moveUp);
-        } else {
-            if (location.getDirection() == Direction.SOUTH) {
-                location.setY(moveDown);
+            location.setX(location.getX() + 1);
+        }else if (location.getDirection() == Direction.SOUTH) {
+                location.setY(location.getY() - 1);
             } else if (location.getDirection() == Direction.WEST) {
-                location.setX(moveDown);
+                location.setX(location.getX() - 1);
             }
         }
 
-    }
 
     private void executeCommandTurnLeft() {
         if (location.getDirection() == Direction.NORTH) {
